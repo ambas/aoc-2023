@@ -9,7 +9,7 @@ struct Day01: AdventDay {
     data.split(separator: "\n").map { String($0) }
   }
 
-  let set = [
+  let dict = [
     "one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7",
     "eight": "8", "nine": "9",
   ]
@@ -36,11 +36,11 @@ struct Day01: AdventDay {
 
     while p >= 0 && p < count {
       if input[p].isNumber { return String(input[p]) }
-      for key in set.keys {
+      for key in dict.keys {
         let keyCount = key.count
         let bound = min(p + keyCount, count)
         if String(input[p..<bound]) == key {
-          return set[key]!
+          return dict[key]!
         }
       }
       p += isFirst ? 1 : -1
