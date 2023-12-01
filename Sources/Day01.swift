@@ -19,8 +19,8 @@ struct Day01: AdventDay {
     for input in entities {
       let firstNum = number(from: input, isFirst: true)
       let lastNum = number(from: input, isFirst: false)
-      let a = Int(firstNum + lastNum)!
-      nums.append(a)
+      let res = Int(firstNum + lastNum)!
+      nums.append(res)
     }
     return nums.reduce(0, +)
   }
